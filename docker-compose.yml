@@ -1,13 +1,11 @@
 web:
-    #restart: always
+    restart: always
     build: .
-    #command: python -u /flask_compose/app/app.py
-    #command: /usr/local/bin/gunicorn -w4 -b0.0.0.0:5000 app:app
-    command: /usr/local/bin/gunicorn -w4 -b0.0.0.0:5000 app:app --chdir /flask_compose/app
+    command: /usr/local/bin/gunicorn -w4 -b0.0.0.0:5000 webapp.app:app --chdir /flask-app/webapp
     ports:
         - "5000:5000"
     volumes:
-        - .:/flask_compose
+        - .:/flask-app
     links:
         - mongo
         - redis
