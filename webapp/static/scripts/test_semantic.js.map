@@ -1,0 +1,1 @@
+{"version":3,"names":[],"mappings":"","sources":["test_semantic.js"],"sourcesContent":["(function() {\n  $(document).ready(function() {\n    return console.log('hehe');\n  });\n\n}).call(this);\n"],"file":"test_semantic.js","sourceRoot":"/source/"}

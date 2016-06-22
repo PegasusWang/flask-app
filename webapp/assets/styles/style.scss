@@ -1,0 +1,15 @@
+body {
+    //width: 960px;
+    max-width: 960px;    // 不用width防止浏览器缩小时候出现滚动条
+    margin: 0 auto;
+    text-align: center;
+}
+
+li {
+    display: inline;
+    padding: 5px;
+}
+
+#content {
+    background: gray;
+}
