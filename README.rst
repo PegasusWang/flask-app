@@ -3,6 +3,15 @@ webapp-flask
 ===============================
 
 webapp flask version
+一个flask
+app项目框架，集成了gulp等工具。使用docker集成了redis，mongodb，mysql等数据库，可以快速建立一个flask
+app。
+
+`generator-webapp <https://github.com/yeoman/generator-webapp>`_
+一个前端gulp项目生成器。
+
+`cookiecutter-flask <https://github.com/sloria/cookiecutter-flask>`_
+cookiecutter的flask项目生成器。
 
 
 Quickstart
