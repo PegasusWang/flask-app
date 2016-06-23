@@ -17,3 +17,13 @@ def post():
 @blueprint.route('/t/')
 def t():
     return render_template('semantic.html')
+
+
+@blueprint.route('/hello/')
+def hello():
+    return 'hello'
+
+
+@blueprint.route('/hehe/')
+def hehe():
+    return render_template('t.html')

@@ -49,7 +49,7 @@ class OnChangeHandler(pyinotify.ProcessEvent):
 
     def my_init(self, cwd, extension, cmd):
         self.cwd = cwd
-        self.extensions = extension.split(',')
+        self.extensions = [ext for ext in extension.split(',') if ext]
         self.cmd = cmd
         self.process = None
         self._start_process()
@@ -114,7 +114,7 @@ if __name__ == '__main__':
     import sys
     path = './webapp/'
     excl_list = ['./webapp/node_modules/*', './webapp/assets/*']
-    extension = 'py'
+    extension = 'py,'
     try:
         port = sys.argv[1]
     except IndexError:

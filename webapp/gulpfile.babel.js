@@ -103,7 +103,7 @@ gulp.task('clean', del.bind(null, ['.tmp', 'dist']));
 
 gulp.task('serve', ['styles', 'scripts', 'fonts'], () => {
   browserSync.init({
-      proxy: 'http://localhost:5000',    // use proxy mode
+      proxy: 'http://127.0.0.1:5000',    // use proxy mode
   });
   /*
   browserSync({
