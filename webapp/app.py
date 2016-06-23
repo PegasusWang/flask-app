@@ -8,12 +8,6 @@ from webapp.extensions import (bcrypt, cache, csrf_protect, db,
                                   debug_toolbar, login_manager, migrate)
 from webapp.settings import ProdConfig
 
-# from . import public, user, post
-# from assets import assets
-# from extensions import (bcrypt, cache, csrf_protect, db,
-                                  # debug_toolbar, login_manager, migrate)
-# from settings import ProdConfig
-
 
 def create_app(config_object=ProdConfig):
     """An application factory, as explained here: http://flask.pocoo.org/docs/patterns/appfactories/.
