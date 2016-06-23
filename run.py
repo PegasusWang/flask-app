@@ -88,17 +88,20 @@ class OnChangeHandler(pyinotify.ProcessEvent):
     process_IN_MOVED_TO = process_IN_CLOSE_WRITE
 
 
-def autoreload(path, extension, cmd):
+def autoreload(path, extension, cmd, excl_list):
     wm = pyinotify.WatchManager()
     handler = OnChangeHandler(cwd=path, extension=extension, cmd=cmd)
     notifier = ReloadNotifier(wm, default_proc_fun=handler)
+    # https://github.com/seb-m/pyinotify/blob/master/python2/examples/exclude.py
+    excl = pyinotify.ExcludeFilter(excl_list)    # exclude file
 
     # 设置需要监控的事件
     mask = (pyinotify.IN_CLOSE_WRITE | pyinotify.IN_MOVED_FROM |
             pyinotify.IN_MOVED_TO | pyinotify.IN_CREATE | pyinotify.IN_DELETE |
             pyinotify.IN_DELETE_SELF | pyinotify.IN_MOVE_SELF |
             pyinotify.IN_MODIFY)
-    wm.add_watch(path, mask, rec=True, auto_add=True)
+    wm.add_watch(path, mask, rec=True, auto_add=True,
+                 exclude_filter=excl)
 
     print(getattr(Fore, TERMINAL_COLOR) +
           '==> Start monitoring %s (type c^c to exit) <==' % path +
@@ -109,13 +112,12 @@ def autoreload(path, extension, cmd):
 
 if __name__ == '__main__':
     import sys
-    path = './'
-    #extension = 'py,mako,po,mo,css,js'
+    path = './webapp/'
+    excl_list = ['./webapp/node_modules/*', './webapp/assets/*']
     extension = 'py'
     try:
         port = sys.argv[1]
     except IndexError:
         port = '1200'
-    # cmd = """uwsgi --http :%s --wsgi-file wsgi_test.py --honour-stdin -m -p 2 --http-keepalive --http-timeout 180""" % port
     cmd = """python manage.py server"""
-    autoreload(path, extension, cmd)
+    autoreload(path, extension, cmd, excl_list)
