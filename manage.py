@@ -98,4 +98,5 @@ manager.add_command('lint', Lint())
 # manager.add_command('gunicorn', GunicornServer())
 
 if __name__ == '__main__':
-    manager.run()
+    # manager.run()
+    app.run(host='0.0.0.0', port=5000, debug=True)

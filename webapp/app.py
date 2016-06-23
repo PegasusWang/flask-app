@@ -1,12 +1,14 @@
 # -*- coding: utf-8 -*-
 """The app module, containing the app factory function."""
+
+import os
 from flask import Flask, render_template
 
 from webapp import public, user, post
 from webapp.assets import assets
 from webapp.extensions import (bcrypt, cache, csrf_protect, db,
                                   debug_toolbar, login_manager, migrate)
-from webapp.settings import ProdConfig
+from webapp.settings import DevConfig, ProdConfig
 
 
 def create_app(config_object=ProdConfig):
@@ -53,3 +55,8 @@ def register_errorhandlers(app):
     for errcode in [401, 404, 500]:
         app.errorhandler(errcode)(render_error)
     return None
+
+if '__name__' == '__main__':
+    CONFIG = ProdConfig if os.environ.get('WEBAPP_ENV') == 'prod' else DevConfig
+    app = create_app(CONFIG)
+    app.run('0.0.0.0', port=5000, debug=True)
