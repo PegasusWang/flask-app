@@ -2,16 +2,53 @@
 webapp-flask
 ===============================
 
-webapp flask version
+flask web app template.
+
 一个flask
 app项目框架，集成了gulp等工具。使用docker集成了redis，mongodb，mysql等数据库，可以快速建立一个flask
-app。
+app。功能包括coffee，sass支持；前端文件更改后浏览器自动刷新；后端python文件修改后自动重启；docker集成
+mysql，mongodb，redis数据库，免去了自己安装的麻烦，可以专注于开发业务逻辑。mac下测试通过。主要参考了以下两个项目生成器：
+
 
 `generator-webapp <https://github.com/yeoman/generator-webapp>`_
 一个前端gulp项目生成器。
 
 `cookiecutter-flask <https://github.com/sloria/cookiecutter-flask>`_
 cookiecutter的flask项目生成器。
+
+使用步骤
+________
+
+之前需要安装docker, docker-meachine, docker-compose; 用nvm安装node等工具。
+
+.. code-block:: bash
+
+    # mac上先执行一下命令，最后得到的ip是你的访问路径。ubuntu下跳过
+    docker-machine start default
+    eval $(docker-machine env default)
+    docker-machine ip default
+
+之后克隆项目，然后通过npm和bower安装前端相关依赖
+
+.. code-block:: bash
+
+    git clone https://github.com/PegasusWang/flask-app
+    cd flask-app/webapp
+    npm install    # 安装gulp
+    cd webapp/static/
+    bower install    # 安装jquery等
+
+最后运行
+
+.. code-block:: bash
+
+   cd flask-app
+   docker-compose up    # 启动docker里的flask和数据库等实例
+   cd webapp
+   gulp serve   # 监控前端等文件
+
+可以直接编写flask应用了。通过 `docker-meachine ip default` 得到的地址访问。
+
 
 
 Quickstart

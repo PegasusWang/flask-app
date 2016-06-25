@@ -32,4 +32,4 @@ def hehe():
 @blueprint.route('/haha/')
 def haha():
     import time
-    return 'haha' + str(time.time())
+    return 'hahhehea' + '<br>' + str(time.time())
