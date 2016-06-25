@@ -27,3 +27,9 @@ def hello():
 @blueprint.route('/hehe/')
 def hehe():
     return render_template('t.html')
+
+
+@blueprint.route('/haha/')
+def haha():
+    import time
+    return 'haha' + str(time.time())

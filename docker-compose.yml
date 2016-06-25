@@ -2,8 +2,7 @@ web:
     restart: always
     build: .
     #command: /usr/local/bin/gunicorn -w4 -b0.0.0.0:5000 app:app --chdir /flask-app/webapp
-    #command: python manage.py server
-    command: ./run.py
+    command: python manage.py server
     ports:
         - "5000:5000"
     volumes:
