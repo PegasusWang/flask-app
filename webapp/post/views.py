@@ -1,8 +1,9 @@
 #!/usr/bin/env python
 # -*- coding:utf-8 -*-
 
-
-from flask import Blueprint, render_template
+from flask import Blueprint, render_template, request, redirect, url_for
+from .models import Post
+from webapp.extensions import redis_store as r
 
 
 blueprint = Blueprint('post', __name__, url_prefix='/post',
@@ -10,26 +11,29 @@ blueprint = Blueprint('post', __name__, url_prefix='/post',
 
 
 @blueprint.route('/')
-def post():
-    return render_template('semantic.html')
-
-
-@blueprint.route('/t/')
-def t():
-    return render_template('semantic.html')
-
-
-@blueprint.route('/hello/')
 def hello():
     return 'hello'
 
 
-@blueprint.route('/hehe/')
-def hehe():
-    return render_template('t.html')
+@blueprint.route('/list')
+def post():
+    post_list = Post.objects.all()
+    title_str = '\n'.join([post.title for post in post_list])
+    if not title_str:
+        title_str = 'wahaha'
+    return title_str
+    # return render_template('semantic.html')
 
 
-@blueprint.route('/haha/')
-def haha():
-    import time
-    return 'hahhehea' + '<br>' + str(time.time())
+@blueprint.route('/add/')
+def add_post():
+    title = request.args.get('title', 'hehe')
+    post = Post(title=title)
+    post.save()
+    return redirect(url_for('post.post'))
+
+
+@blueprint.route('/r/')
+def redis():
+    r.incr('hits')
+    return 'I have been seen %s times' % r.get('hits')

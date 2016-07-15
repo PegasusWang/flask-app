@@ -6,8 +6,11 @@ from flask import Flask, render_template
 
 from webapp import public, user, post
 from webapp.assets import assets
-from webapp.extensions import (bcrypt, cache, csrf_protect, db,
-                                  debug_toolbar, login_manager, migrate)
+from webapp.extensions import (
+    bcrypt, cache, csrf_protect, db,
+    debug_toolbar, login_manager, migrate,
+    mongodb, redis_store
+)
 from webapp.settings import DevConfig, ProdConfig
 
 
@@ -30,6 +33,8 @@ def register_extensions(app):
     bcrypt.init_app(app)
     cache.init_app(app)
     db.init_app(app)
+    mongodb.init_app(app)
+    redis_store.init_app(app)
     csrf_protect.init_app(app)
     login_manager.init_app(app)
     debug_toolbar.init_app(app)

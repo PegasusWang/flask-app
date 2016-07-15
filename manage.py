@@ -25,7 +25,8 @@ migrate = Migrate(app, db)
 
 
 def _make_context():
-    """Return context dict for a shell session so you can access app, db, and the User model by default."""
+    """Return context dict for a shell session so you can access app, db,
+    and the User model by default."""
     return {'app': app, 'db': db, 'User': User}
 
 
@@ -88,8 +89,9 @@ class GunicornServer(Command):
         return app.run()
 
 
-manager.add_command('server',
-                    Server(host='0.0.0.0', port=5000, use_debugger=True))
+manager.add_command('server', Server(
+    host='0.0.0.0', port=5000, use_debugger=True, use_reloader=True
+))
 manager.add_command('shell', Shell(make_context=_make_context))
 manager.add_command('db', MigrateCommand)
 manager.add_command('urls', ShowUrls())
@@ -98,5 +100,5 @@ manager.add_command('lint', Lint())
 # manager.add_command('gunicorn', GunicornServer())
 
 if __name__ == '__main__':
-    # manager.run()
-    app.run(host='0.0.0.0', port=5000, debug=True)
+    manager.run()
+    # app.run(host='0.0.0.0', port=5000, debug=True)

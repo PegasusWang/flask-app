@@ -47,7 +47,10 @@ ________
    cd webapp
    gulp serve   # 监控前端等文件
 
-可以直接编写flask应用了。通过 `docker-meachine ip default` 得到的地址访问。
+可以直接编写flask应用了。通过 `docker-meachine ip default`
+得到的地址访问，然后在gulpfile中代理这个地址。
+用 `docker exec -it flaskapp_web_1 bash`
+登录进去docker，ctrl+p,ctrl+q的方式退出。
 
 
 

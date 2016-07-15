@@ -26,18 +26,45 @@ class ProdConfig(Config):
     DEBUG_TB_ENABLED = False  # Disable Debug toolbar
 
 
+class RedisConfig(object):
+    HOST = 'redis'
+    PORT = 6379
+    DB = 0
+    URL = 'redis://%s:%d/%d' % (HOST, PORT, DB)
+
+
+class MongoConfig(object):
+    HOST = 'mongo'
+    PORT = 27017
+    DB = 'test'
+
+
+class MysqlConfig(object):
+    USER = 'root'
+    PASSWORD = 'p@ssw0rd123'
+    DATABASE = 'wordpress'
+    HOSTNAME = 'mysqlserver'
+    URL = 'mysql://%s:%s@%s/%s' % (USER, PASSWORD, HOSTNAME, DATABASE)
+
+
 class DevConfig(Config):
     """Development configuration."""
 
     ENV = 'dev'
     DEBUG = True
     DB_NAME = 'dev.db'
-    # Put the db file in project root
     DB_PATH = os.path.join(Config.PROJECT_ROOT, DB_NAME)
-    SQLALCHEMY_DATABASE_URI = 'sqlite:///{0}'.format(DB_PATH)
+    SQLALCHEMY_DATABASE_URI = MysqlConfig.URL
     DEBUG_TB_ENABLED = True
     ASSETS_DEBUG = True  # Don't bundle/minify static assets
     CACHE_TYPE = 'simple'  # Can be "memcached", "redis", etc.
+
+    MONGODB_SETTINGS = {
+        'db': MongoConfig.DB,
+        'host': MongoConfig.HOST,
+        'port': MongoConfig.PORT,
+    }
+    REDIS_URL = RedisConfig.URL
 
 
 class TestConfig(Config):
