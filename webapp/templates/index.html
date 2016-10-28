@@ -1,106 +1,391 @@
-<!doctype html>
-<html class="no-js" lang="">
-  <head>
-    <meta charset="utf-8">
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>webapp</title>
 
-    <link rel="apple-touch-icon" href="apple-touch-icon.png">
-    <!-- Place favicon.ico in the root directory -->
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, user-scalable=no">
+        <meta name="description" content="分享有价值的微信公众号" />
 
-    <!-- build:css styles/vendor.css -->
-    <!-- bower:css -->
-    <!-- endbower -->
-    <!-- endbuild -->
+        <title>微阅读</title>
 
-    <!-- build:css styles/main.css -->
-    <link rel="stylesheet" href="styles/main.css">
-    <!-- endbuild -->
+        <meta name="HandheldFriendly" content="True" />
+        <meta name="viewport" content="width=device-width, user-scalable=no">
 
-    <!-- build:js scripts/vendor/modernizr.js -->
-    <script src="/bower_components/modernizr/modernizr.js"></script>
-    <!-- endbuild -->
-  </head>
-  <body>
-    <!--[if lt IE 10]>
-      <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-    <![endif]-->
+        <link rel="stylesheet" href="/static/libraries/bootstrap/css/bootstrap.min.css?v=1458956a2f77fecf160f735bb4880bb7" charset="utf8"/>
+        <link rel="stylesheet" href="/static/libraries/prism/prism.css?v=45ee71c711293cc19a17d2bfbbf36830" charset="utf8" />
+        <link rel="stylesheet" href="/static/libraries/bootstrap-social/css/bootstrap-social.css?v=63b7fda1046eddaf4706a7b2b10aaf01"charset="utf8" />
+        <link rel="stylesheet" href="/static/libraries/bootstrap-social/css/font-awesome.css?v=8e12157da5fc90094ae4113ba110456b" charset="utf8" />
+        <link rel="stylesheet" href="/static/common/main.entry.css?v=237726de17780dc5ed66254073f405c8" />
 
-    <div class="container">
-      <div class="header">
-        <ul class="nav nav-pills pull-right">
-          <li class="active"><a href="#">Home</a></li>
-          <li><a href="#">About</a></li>
-          <li><a href="#">Contact</a></li>
-        </ul>
-        <h3 class="text-muted">webapp</h3>
-      </div>
+    </head>
 
-      <div class="jumbotron">
-        <h1>madaha</h1>
-        <h1>madaha</h1>
-        <h1>madaha</h1>
-        <h1>'A 'Allo!</h1>
-        <h1>'A 'Allo!</h1>
-        <p class="lead">Always a pleasure scaffolding your apps.</p>
-        <p><a class="btn btn-lg btn-success" href="#">Splendid!</a></p>
-      </div>
+    <body class="home-template">
 
-      <div class="row marketing">
-        <div class="col-lg-6">
-          <h4>HTML5 Boilerplate</h4>
-          <p>HTML5 Boilerplate is a professional front-end template for building fast, robust, and adaptable web apps or sites.</p>
+        <nav class="navbar navbar-default">
 
-          <h4>Sass</h4>
-          <p>Sass is the most mature, stable, and powerful professional grade CSS extension language in the world.</p>
+            <div class="container limit-width">
 
-          <h4>Bootstrap</h4>
-          <p>Sleek, intuitive, and powerful mobile first front-end framework for faster and easier web development.</p>
-          <h4>Modernizr</h4>
-          <p>Modernizr is an open-source JavaScript library that helps you build the next generation of HTML5 and CSS3-powered websites.</p>
+                <div class="navbar-header">
+
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span>
+                    </button>
+
+                    <a class="navbar-brand" href="http://127.0.0.1:8888">微阅读</a>
+
+                </div>
+
+                <div class="collapse navbar-collapse" id="navbar">
+                    <ul class="nav navbar-nav">
+                            <li><a href="http://127.0.0.1:8888/tag/16/" class="hvr-fade">技术 · 编程</a></li>
+                            <li><a href="http://127.0.0.1:8888/tag/17/" class="hvr-fade">创意 · 科技</a></li>
+                            <li><a href="http://127.0.0.1:8888/tag/18/" class="hvr-fade">金融 · 理财</a></li>
+                            <li><a href="http://127.0.0.1:8888/tag/19/" class="hvr-fade">生活 · 心理</a></li>
+                            <li><a href="http://127.0.0.1:8888/tag/20/" class="hvr-fade">电影 · 音乐</a></li>
+                            <li><a href="http://127.0.0.1:8888/tag/21/" class="hvr-fade">段子 · 节操</a></li>
+                    </ul>
+                </div>
+
+
+            </div>
+        </nav>
+
+
+    <div class="spinner"></div>
+
+    <section class="home-template">
+        <div class="container">
+            <div class="row grid">
+
+                        <div class="col-xs-12 col-sm-6 col-md-4 grid-item loading">
+                            <div class="thumbnail">
+                                <div class="image-wrapper">
+                                    <a class="href" href="http://mp.weixin.qq.com/s?__biz=MzAxMDgxOTM5OQ==&mid=402303716&idx=1&sn=583af39166f87045fb7379e0166ea9c4#rd" rel="noreferrer" target="_blank">
+                                        <img src="http://read.html5.qq.com/image?src=forum&q=5&r=0&imgflag=7&imageUrl=http://mmbiz.qpic.cn/mmbiz/nwT8Ca3wEcFPR3EjslhH6qTW1iaphIMMLyicvuuLdFYIiaP9XkhicGGNoGGHRdzj0JOXJacxF73mSACw3ZoWWHlsLg/0?wx_fmt=jpeg" alt="thumbnail"/>
+                                    </a>
+                                </div>
+
+                                <div class="caption">
+                                    <h3><a href="http://mp.weixin.qq.com/s?__biz=MzAxMDgxOTM5OQ==&mid=402303716&idx=1&sn=583af39166f87045fb7379e0166ea9c4#rd" rel="noreferrer" target="_blank">Android 动效系列之二 - Android Image Slider</a></h3>
+                                    <p>Android Image Slider 是 daimajia 作品 。旨在创建一个优雅、便捷的 slider  控件，支持超过 18 种的动效效果。另外，组件也提供了很多定制化的接口，开发者利用这些接口，实现更炫酷的动画效果。</p>
+                                    <a href="http://127.0.0.1:8888?nick_name=github" class="btn btn-default btn-xs" role="button">github</a>
+                                    <time>2016-03-16</time>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-6 col-md-4 grid-item loading">
+                            <div class="thumbnail">
+                                <div class="image-wrapper">
+                                    <a class="href" href="http://mp.weixin.qq.com/s?__biz=MjM5NDU1NTE5NA==&mid=460626734&idx=1&sn=7586a5f94d5ccd8562b693ad9a2ece97#rd" rel="noreferrer" target="_blank">
+                                        <img src="http://read.html5.qq.com/image?src=forum&q=5&r=0&imgflag=7&imageUrl=http://mmbiz.qpic.cn/mmbiz/IuyQ5kp8HPiasDJm06w8Xe0N2fAZZ9bnf37qPbOI827smJZpjorPIgK2iassLTlvZgxdw2iciaCfjiaCjpyZOXbdWvA/0?wx_fmt=jpeg" alt="thumbnail"/>
+                                    </a>
+                                </div>
+
+                                <div class="caption">
+                                    <h3><a href="http://mp.weixin.qq.com/s?__biz=MjM5NDU1NTE5NA==&mid=460626734&idx=1&sn=7586a5f94d5ccd8562b693ad9a2ece97#rd" rel="noreferrer" target="_blank">这 N 个小技巧，让你的工作更有效率 | Matrix 线上分享会</a></h3>
+                                    <p>少数派编辑部通过语音分享了帮助自己提高效率的方法：包括关于快捷键的见解，时间管理的小习惯，以及文字工作者提高输入效率的方式。同时，其他参与者也贡献了不少自己的经验。</p>
+                                    <a href="http://127.0.0.1:8888?nick_name=少数派" class="btn btn-default btn-xs" role="button">少数派</a>
+                                    <time>2016-03-15</time>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-6 col-md-4 grid-item loading">
+                            <div class="thumbnail">
+                                <div class="image-wrapper">
+                                    <a class="href" href="http://mp.weixin.qq.com/s?__biz=MjM5MzgyNTk4MA==&mid=404181016&idx=1&sn=71f74a0f8ceac3cbbbc0d252fc53a388#rd" rel="noreferrer" target="_blank">
+                                        <img src="http://read.html5.qq.com/image?src=forum&q=5&r=0&imgflag=7&imageUrl=http://mmbiz.qpic.cn/mmbiz/7VCED7VDMd5n3am1OWOHsuyYsSQZyAoKVg8vgLv2qKVLY9BC0pWWkicVLOpicSNnaddZEefdHhw90KtmMZ63CJicw/0?wx_fmt=jpeg" alt="thumbnail"/>
+                                    </a>
+                                </div>
+
+                                <div class="caption">
+                                    <h3><a href="http://mp.weixin.qq.com/s?__biz=MjM5MzgyNTk4MA==&mid=404181016&idx=1&sn=71f74a0f8ceac3cbbbc0d252fc53a388#rd" rel="noreferrer" target="_blank">30年前，30年后，太现实了！</a></h3>
+                                    <p>三十年前，带金耳环的，基本都是城里人；三十年后，带金耳环的，基本都是农村人。 三十年前，很多人家把儿子叫狗剩</p>
+                                    <a href="http://127.0.0.1:8888?nick_name=逻辑思维" class="btn btn-default btn-xs" role="button">逻辑思维</a>
+                                    <time>2016-03-15</time>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-6 col-md-4 grid-item loading">
+                            <div class="thumbnail">
+                                <div class="image-wrapper">
+                                    <a class="href" href="http://mp.weixin.qq.com/s?__biz=MjM5MzgyNTk4MA==&mid=404181016&idx=4&sn=5910fc7c4c0f059f4f3a152e5ec6e33b#rd" rel="noreferrer" target="_blank">
+                                        <img src="http://read.html5.qq.com/image?src=forum&q=5&r=0&imgflag=7&imageUrl=http://mmbiz.qpic.cn/mmbiz/7VCED7VDMd5n3am1OWOHsuyYsSQZyAoKmj9oDNDB9mDO4uic9fTH8eatJRRC6mNnpDibN6mJuWboqzibwW0qGX95Q/0?wx_fmt=jpeg" alt="thumbnail"/>
+                                    </a>
+                                </div>
+
+                                <div class="caption">
+                                    <h3><a href="http://mp.weixin.qq.com/s?__biz=MjM5MzgyNTk4MA==&mid=404181016&idx=4&sn=5910fc7c4c0f059f4f3a152e5ec6e33b#rd" rel="noreferrer" target="_blank">人，不要过于看重自己</a></h3>
+                                    <p>做人别把自己太当回事，谁没了谁都照样活得好好的，过于看重自己，最终受伤的只能是你自己。不是你成为了别人生活的</p>
+                                    <a href="http://127.0.0.1:8888?nick_name=逻辑思维" class="btn btn-default btn-xs" role="button">逻辑思维</a>
+                                    <time>2016-03-15</time>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-6 col-md-4 grid-item loading">
+                            <div class="thumbnail">
+                                <div class="image-wrapper">
+                                    <a class="href" href="http://mp.weixin.qq.com/s?__biz=MjM5MzgyNTk4MA==&mid=404181016&idx=2&sn=e0ca6288e16d2f3b74782fa6c69c2ae8#rd" rel="noreferrer" target="_blank">
+                                        <img src="http://read.html5.qq.com/image?src=forum&q=5&r=0&imgflag=7&imageUrl=http://mmbiz.qpic.cn/mmbiz/7VCED7VDMd5n3am1OWOHsuyYsSQZyAoKYibupzV5fUNQoUAe6KTfooG0qmfbwVydrcNuibYL8tImfsF7eRkX9ISg/0?wx_fmt=jpeg" alt="thumbnail"/>
+                                    </a>
+                                </div>
+
+                                <div class="caption">
+                                    <h3><a href="http://mp.weixin.qq.com/s?__biz=MjM5MzgyNTk4MA==&mid=404181016&idx=2&sn=e0ca6288e16d2f3b74782fa6c69c2ae8#rd" rel="noreferrer" target="_blank">聪明的人能看到18个字，我看到15个，你能看到几个？</a></h3>
+                                    <p>这幅图你能看到几个字？听说最多的能看到18个字，可是我只看到了15个？？能看到18个的请留言，也可以测试下你</p>
+                                    <a href="http://127.0.0.1:8888?nick_name=逻辑思维" class="btn btn-default btn-xs" role="button">逻辑思维</a>
+                                    <time>2016-03-15</time>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-6 col-md-4 grid-item loading">
+                            <div class="thumbnail">
+                                <div class="image-wrapper">
+                                    <a class="href" href="http://mp.weixin.qq.com/s?__biz=MjM5MzgyNTk4MA==&mid=404181016&idx=5&sn=e6261870591317b5935653fd21e77b49#rd" rel="noreferrer" target="_blank">
+                                        <img src="http://read.html5.qq.com/image?src=forum&q=5&r=0&imgflag=7&imageUrl=http://mmbiz.qpic.cn/mmbiz/7VCED7VDMd5n3am1OWOHsuyYsSQZyAoKj88t4sAxmHo822prJzj2uLNicZjQ0UELCWleQ9NlR6nsRia7CPrIibpbg/0?wx_fmt=jpeg" alt="thumbnail"/>
+                                    </a>
+                                </div>
+
+                                <div class="caption">
+                                    <h3><a href="http://mp.weixin.qq.com/s?__biz=MjM5MzgyNTk4MA==&mid=404181016&idx=5&sn=e6261870591317b5935653fd21e77b49#rd" rel="noreferrer" target="_blank">你，有什么资格不努力？！</a></h3>
+                                    <p>一这个世界很现实，这个世界没有不公平，但是不可否认，我爱这个世界，因为它至少给我们机会，让我们去改变某些东西</p>
+                                    <a href="http://127.0.0.1:8888?nick_name=逻辑思维" class="btn btn-default btn-xs" role="button">逻辑思维</a>
+                                    <time>2016-03-15</time>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-6 col-md-4 grid-item loading">
+                            <div class="thumbnail">
+                                <div class="image-wrapper">
+                                    <a class="href" href="http://mp.weixin.qq.com/s?__biz=MjM5MzgyNTk4MA==&mid=404181016&idx=3&sn=32f9e78dd0d6a68ac8c963532dc4b575#rd" rel="noreferrer" target="_blank">
+                                        <img src="http://read.html5.qq.com/image?src=forum&q=5&r=0&imgflag=7&imageUrl=http://mmbiz.qpic.cn/mmbiz/7VCED7VDMd5n3am1OWOHsuyYsSQZyAoKVSQ414JnLPZUe81B9aMeerJjMNiatYnxn4oCeBjRXs2d2qRThJAM0JQ/0?wx_fmt=jpeg" alt="thumbnail"/>
+                                    </a>
+                                </div>
+
+                                <div class="caption">
+                                    <h3><a href="http://mp.weixin.qq.com/s?__biz=MjM5MzgyNTk4MA==&mid=404181016&idx=3&sn=32f9e78dd0d6a68ac8c963532dc4b575#rd" rel="noreferrer" target="_blank">你每天90%的注意力，都浪费在了鸡毛蒜皮上</a></h3>
+                                    <p>说到全世界的“寿司第一人”，你一定知道他——“寿司之神”小野二郎。 他今年已经89岁高龄，是世界上年龄最大的</p>
+                                    <a href="http://127.0.0.1:8888?nick_name=逻辑思维" class="btn btn-default btn-xs" role="button">逻辑思维</a>
+                                    <time>2016-03-15</time>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-6 col-md-4 grid-item loading">
+                            <div class="thumbnail">
+                                <div class="image-wrapper">
+                                    <a class="href" href="http://mp.weixin.qq.com/s?__biz=MjM5MzgyNTk4MA==&mid=404181016&idx=6&sn=669e34e55ee854aa0c65e6fb76d869ce#rd" rel="noreferrer" target="_blank">
+                                        <img src="http://read.html5.qq.com/image?src=forum&q=5&r=0&imgflag=7&imageUrl=http://mmbiz.qpic.cn/mmbiz/7VCED7VDMd5n3am1OWOHsuyYsSQZyAoKHcDNffjYCOibHgiadZDdyTCOyGTMdpkq2TtJWGk5IYuBmazwv1dVlzZQ/0?wx_fmt=jpeg" alt="thumbnail"/>
+                                    </a>
+                                </div>
+
+                                <div class="caption">
+                                    <h3><a href="http://mp.weixin.qq.com/s?__biz=MjM5MzgyNTk4MA==&mid=404181016&idx=6&sn=669e34e55ee854aa0c65e6fb76d869ce#rd" rel="noreferrer" target="_blank">我们都需要一个知己</a></h3>
+                                    <p>如今社会越来越现实，整个社会进步都靠利益驱动，但是我们此时更需要知己。越努力越孤独，越奋斗越寂寞，如果能得一</p>
+                                    <a href="http://127.0.0.1:8888?nick_name=逻辑思维" class="btn btn-default btn-xs" role="button">逻辑思维</a>
+                                    <time>2016-03-15</time>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-6 col-md-4 grid-item loading">
+                            <div class="thumbnail">
+                                <div class="image-wrapper">
+                                    <a class="href" href="http://mp.weixin.qq.com/s?__biz=MjM5MzgyNTk4MA==&mid=404181016&idx=7&sn=14a9054ce6bb988444fc7f16d2ad6e4a#rd" rel="noreferrer" target="_blank">
+                                        <img src="http://read.html5.qq.com/image?src=forum&q=5&r=0&imgflag=7&imageUrl=http://mmbiz.qpic.cn/mmbiz/7VCED7VDMd5n3am1OWOHsuyYsSQZyAoKFBwVpIvKO0XDRibbzrvWuLqxKkGwViamUmibTIzvswNDQQLznXia10oCcQ/0?wx_fmt=jpeg" alt="thumbnail"/>
+                                    </a>
+                                </div>
+
+                                <div class="caption">
+                                    <h3><a href="http://mp.weixin.qq.com/s?__biz=MjM5MzgyNTk4MA==&mid=404181016&idx=7&sn=14a9054ce6bb988444fc7f16d2ad6e4a#rd" rel="noreferrer" target="_blank">笨人才耍心眼儿，聪明人只需厚道</a></h3>
+                                    <p>前两天，我在朋友圈里看到有一位朋友写了这么一段话：“我年纪越大，就越觉得那些心理阴晦，一肚子心计，满脑子阴谋</p>
+                                    <a href="http://127.0.0.1:8888?nick_name=逻辑思维" class="btn btn-default btn-xs" role="button">逻辑思维</a>
+                                    <time>2016-03-15</time>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-6 col-md-4 grid-item loading">
+                            <div class="thumbnail">
+                                <div class="image-wrapper">
+                                    <a class="href" href="http://mp.weixin.qq.com/s?__biz=MjM5MzgyNTk4MA==&mid=404181016&idx=8&sn=6ce3a759ece63f1867c701c952e0b36a#rd" rel="noreferrer" target="_blank">
+                                        <img src="http://read.html5.qq.com/image?src=forum&q=5&r=0&imgflag=7&imageUrl=http://mmbiz.qpic.cn/mmbiz/7VCED7VDMd5n3am1OWOHsuyYsSQZyAoKMHbWhJ0MLFY3SB8xlGSRjrM6ODSibvvlqGiaLdDtbVsoEW9VV9ZwQsZg/0?wx_fmt=jpeg" alt="thumbnail"/>
+                                    </a>
+                                </div>
+
+                                <div class="caption">
+                                    <h3><a href="http://mp.weixin.qq.com/s?__biz=MjM5MzgyNTk4MA==&mid=404181016&idx=8&sn=6ce3a759ece63f1867c701c952e0b36a#rd" rel="noreferrer" target="_blank">从前没有情人节，却有最美的情书</a></h3>
+                                    <p>“我一辈子走过许多地方的路，行过许多地方的桥，看过许多形状的云，喝过许多种类的酒，却只爱过一个正当最好年龄的</p>
+                                    <a href="http://127.0.0.1:8888?nick_name=逻辑思维" class="btn btn-default btn-xs" role="button">逻辑思维</a>
+                                    <time>2016-03-15</time>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-6 col-md-4 grid-item loading">
+                            <div class="thumbnail">
+                                <div class="image-wrapper">
+                                    <a class="href" href="http://mp.weixin.qq.com/s?__biz=MjM5NDU1NTE5NA==&mid=460480388&idx=1&sn=109ce3d60dc100a7b65652c69be0d51f#rd" rel="noreferrer" target="_blank">
+                                        <img src="http://read.html5.qq.com/image?src=forum&q=5&r=0&imgflag=7&imageUrl=http://mmbiz.qpic.cn/mmbiz/IuyQ5kp8HPjf82o5gFN35bBWo5772MW5kKBcLLiaYvPibOElHBLOianwm04MicA9icKz6aFezp9VNVTy4B70fdibUgmA/0?wx_fmt=jpeg" alt="thumbnail"/>
+                                    </a>
+                                </div>
+
+                                <div class="caption">
+                                    <h3><a href="http://mp.weixin.qq.com/s?__biz=MjM5NDU1NTE5NA==&mid=460480388&idx=1&sn=109ce3d60dc100a7b65652c69be0d51f#rd" rel="noreferrer" target="_blank">一周 App 派评：写作大拿 Ulysses、图片印戳 Oiday、习惯养成 Today、维基浏览 Viki</a></h3>
+                                    <p>春天到了，用 Today 设置运动目标。晨跑时打开 Oiday 标记那一刻的蓬勃。迷了路，让 Viki 告诉你身处何地。最后，用 Ulysses 将这些都记在 iPhone 里。</p>
+                                    <a href="http://127.0.0.1:8888?nick_name=少数派" class="btn btn-default btn-xs" role="button">少数派</a>
+                                    <time>2016-03-14</time>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-6 col-md-4 grid-item loading">
+                            <div class="thumbnail">
+                                <div class="image-wrapper">
+                                    <a class="href" href="http://mp.weixin.qq.com/s?__biz=MjM5NDU1NTE5NA==&mid=460480388&idx=2&sn=7325c26833f880c37e6a945977a40ac5#rd" rel="noreferrer" target="_blank">
+                                        <img src="http://read.html5.qq.com/image?src=forum&q=5&r=0&imgflag=7&imageUrl=http://mmbiz.qpic.cn/mmbiz/IuyQ5kp8HPjf82o5gFN35bBWo5772MW5Cua7X0asreBuZmMNutVia87YPaswHRv8TZ02RZhzic1iaR4rRUTGWsicTQ/0?wx_fmt=jpeg" alt="thumbnail"/>
+                                    </a>
+                                </div>
+
+                                <div class="caption">
+                                    <h3><a href="http://mp.weixin.qq.com/s?__biz=MjM5NDU1NTE5NA==&mid=460480388&idx=2&sn=7325c26833f880c37e6a945977a40ac5#rd" rel="noreferrer" target="_blank">神奇的 Option（⌥）键 | 一日一技 • Mac</a></h3>
+                                    <p>如果非要做一个比喻的话，我大概会将 OS X 比作一块可琢可磨，细加「把玩」的美玉。因为在其中实在包含着太多可以「玩味」的东西。</p>
+                                    <a href="http://127.0.0.1:8888?nick_name=少数派" class="btn btn-default btn-xs" role="button">少数派</a>
+                                    <time>2016-03-14</time>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-6 col-md-4 grid-item loading">
+                            <div class="thumbnail">
+                                <div class="image-wrapper">
+                                    <a class="href" href="http://mp.weixin.qq.com/s?__biz=MjM5MzgyNTk4MA==&mid=404154825&idx=1&sn=08f66c09a995eaed3e62e52ba64be264#rd" rel="noreferrer" target="_blank">
+                                        <img src="http://read.html5.qq.com/image?src=forum&q=5&r=0&imgflag=7&imageUrl=http://mmbiz.qpic.cn/mmbiz/7VCED7VDMd5MqqIFC64j8A4qAxNMZsJvFGwFmDACdiaaJtViamvib54g3NAfYicWZLUSWoGGud1fspPqolmU9n2CRA/0?wx_fmt=jpeg" alt="thumbnail"/>
+                                    </a>
+                                </div>
+
+                                <div class="caption">
+                                    <h3><a href="http://mp.weixin.qq.com/s?__biz=MjM5MzgyNTk4MA==&mid=404154825&idx=1&sn=08f66c09a995eaed3e62e52ba64be264#rd" rel="noreferrer" target="_blank">别担心，一切都会好的</a></h3>
+                                    <p>点击标题下方关注逻辑思维，免费订阅。1亲爱的自己人活在世上不可能事事尽如人意，遇到困难和烦心的事情，听听别人</p>
+                                    <a href="http://127.0.0.1:8888?nick_name=逻辑思维" class="btn btn-default btn-xs" role="button">逻辑思维</a>
+                                    <time>2016-03-14</time>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-6 col-md-4 grid-item loading">
+                            <div class="thumbnail">
+                                <div class="image-wrapper">
+                                    <a class="href" href="http://mp.weixin.qq.com/s?__biz=MjM5MzgyNTk4MA==&mid=404154825&idx=3&sn=c04985b196045a65f3703f9bf7a591dc#rd" rel="noreferrer" target="_blank">
+                                        <img src="http://read.html5.qq.com/image?src=forum&q=5&r=0&imgflag=7&imageUrl=http://mmbiz.qpic.cn/mmbiz/7VCED7VDMd5MqqIFC64j8A4qAxNMZsJvys4xfSl0AqYpQ2EsBOncB3dWTtwUSb9JfgaFuygnz6VFIaL5AJh1Fg/0?wx_fmt=jpeg" alt="thumbnail"/>
+                                    </a>
+                                </div>
+
+                                <div class="caption">
+                                    <h3><a href="http://mp.weixin.qq.com/s?__biz=MjM5MzgyNTk4MA==&mid=404154825&idx=3&sn=c04985b196045a65f3703f9bf7a591dc#rd" rel="noreferrer" target="_blank">不要再问孩子“作业写完了吗？</a></h3>
+                                    <p>不是“作业"出了问题，而是“爱”出了问题很多父母一回到家，看到孩子第一句话是：“作业写完了吗？”这句话折射出</p>
+                                    <a href="http://127.0.0.1:8888?nick_name=逻辑思维" class="btn btn-default btn-xs" role="button">逻辑思维</a>
+                                    <time>2016-03-14</time>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-6 col-md-4 grid-item loading">
+                            <div class="thumbnail">
+                                <div class="image-wrapper">
+                                    <a class="href" href="http://mp.weixin.qq.com/s?__biz=MjM5MzgyNTk4MA==&mid=404154825&idx=7&sn=b12fb58c4b737740fe821abd126d7b8c#rd" rel="noreferrer" target="_blank">
+                                        <img src="http://read.html5.qq.com/image?src=forum&q=5&r=0&imgflag=7&imageUrl=http://mmbiz.qpic.cn/mmbiz/7VCED7VDMd5MqqIFC64j8A4qAxNMZsJvvlGo3gd2G42ibKycFcLvVsDicWesUAqcbkLwCdq5fKXricXzOzxdibfNww/0?wx_fmt=jpeg" alt="thumbnail"/>
+                                    </a>
+                                </div>
+
+                                <div class="caption">
+                                    <h3><a href="http://mp.weixin.qq.com/s?__biz=MjM5MzgyNTk4MA==&mid=404154825&idx=7&sn=b12fb58c4b737740fe821abd126d7b8c#rd" rel="noreferrer" target="_blank">愿你有能力与生活握手言和！</a></h3>
+                                    <p>站在顶峰，有多少人仰望你；落在谷底，就有多少人贬低你；利益吸引，有多少人追随你；好处断尽，就有多少人抛弃你。</p>
+                                    <a href="http://127.0.0.1:8888?nick_name=逻辑思维" class="btn btn-default btn-xs" role="button">逻辑思维</a>
+                                    <time>2016-03-14</time>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-6 col-md-4 grid-item loading">
+                            <div class="thumbnail">
+                                <div class="image-wrapper">
+                                    <a class="href" href="http://mp.weixin.qq.com/s?__biz=MjM5MzgyNTk4MA==&mid=404154825&idx=2&sn=7248c9414505177f6bf9a7f868eb0966#rd" rel="noreferrer" target="_blank">
+                                        <img src="http://read.html5.qq.com/image?src=forum&q=5&r=0&imgflag=7&imageUrl=http://mmbiz.qpic.cn/mmbiz/7VCED7VDMd5MqqIFC64j8A4qAxNMZsJv4sAUZAA5RicLpkKvQzKvrhPEWZwgbia4LpD6FPO39Ib7tkxgicYf0fmDg/0?wx_fmt=jpeg" alt="thumbnail"/>
+                                    </a>
+                                </div>
+
+                                <div class="caption">
+                                    <h3><a href="http://mp.weixin.qq.com/s?__biz=MjM5MzgyNTk4MA==&mid=404154825&idx=2&sn=7248c9414505177f6bf9a7f868eb0966#rd" rel="noreferrer" target="_blank">很短一个故事，却看穿了许多人</a></h3>
+                                    <p>傍晚，一只羊独自在山坡上玩。突然从树木中窜出一只狼来，要吃羊，羊跳起来，拼命用角抵抗，并大声向朋友们求救。牛</p>
+                                    <a href="http://127.0.0.1:8888?nick_name=逻辑思维" class="btn btn-default btn-xs" role="button">逻辑思维</a>
+                                    <time>2016-03-14</time>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-6 col-md-4 grid-item loading">
+                            <div class="thumbnail">
+                                <div class="image-wrapper">
+                                    <a class="href" href="http://mp.weixin.qq.com/s?__biz=MjM5MzgyNTk4MA==&mid=404154825&idx=8&sn=70fa671e27f5aea2c4e1bb49b3055340#rd" rel="noreferrer" target="_blank">
+                                        <img src="http://read.html5.qq.com/image?src=forum&q=5&r=0&imgflag=7&imageUrl=http://mmbiz.qpic.cn/mmbiz/7VCED7VDMd5MqqIFC64j8A4qAxNMZsJv5wINOaZibsSdv33dA3ffrdXZMKsBuYmXYXE6yy1IqL8m0uhDOpdX9Ew/0?wx_fmt=jpeg" alt="thumbnail"/>
+                                    </a>
+                                </div>
+
+                                <div class="caption">
+                                    <h3><a href="http://mp.weixin.qq.com/s?__biz=MjM5MzgyNTk4MA==&mid=404154825&idx=8&sn=70fa671e27f5aea2c4e1bb49b3055340#rd" rel="noreferrer" target="_blank">女人，不能悦人，则悦己</a></h3>
+                                    <p>每个女人都在寻找一个爷们，最后发现，最爷们的原来是自己。女人，在没有遇到真正疼你那个人之前，一定要像个男人一</p>
+                                    <a href="http://127.0.0.1:8888?nick_name=逻辑思维" class="btn btn-default btn-xs" role="button">逻辑思维</a>
+                                    <time>2016-03-14</time>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-6 col-md-4 grid-item loading">
+                            <div class="thumbnail">
+                                <div class="image-wrapper">
+                                    <a class="href" href="http://mp.weixin.qq.com/s?__biz=MjM5MzgyNTk4MA==&mid=404154825&idx=4&sn=918e01040deff3561e4055c1f7da940f#rd" rel="noreferrer" target="_blank">
+                                        <img src="http://read.html5.qq.com/image?src=forum&q=5&r=0&imgflag=7&imageUrl=http://mmbiz.qpic.cn/mmbiz/7VCED7VDMd5MqqIFC64j8A4qAxNMZsJvcxETdwK3V9zSiamib5akyjzSXWKxRKLsFSwbCYicLppkLE6FBTsvLFoVg/0?wx_fmt=jpeg" alt="thumbnail"/>
+                                    </a>
+                                </div>
+
+                                <div class="caption">
+                                    <h3><a href="http://mp.weixin.qq.com/s?__biz=MjM5MzgyNTk4MA==&mid=404154825&idx=4&sn=918e01040deff3561e4055c1f7da940f#rd" rel="noreferrer" target="_blank">我相信，你肯定有过这样的经历</a></h3>
+                                    <p>许多时候，我们面对困难，我们无法解决当我们企图去逃避时，却发现……这时候，我们也许会寻找帮助“上帝啊，上帝”</p>
+                                    <a href="http://127.0.0.1:8888?nick_name=逻辑思维" class="btn btn-default btn-xs" role="button">逻辑思维</a>
+                                    <time>2016-03-14</time>
+                                </div>
+                            </div>
+                        </div>
+
+            </div>
 
         </div>
-      </div>
+    </section>
 
-      <div class="footer">
-        <p>♥♥♥♥♥ from the Yeoman team</p>
-      </div>
+    <nav class="pagination">
+    <ul class="pager">
+            <li class="disabled"><span aria-hidden="true">&larr; Newer</span></li>
+            <li>Page 1 of 92</li>
+            <li><a href="http://127.0.0.1:8888/page/2">Older <span aria-hidden="true">&rarr;</span></a></li>
+    </ul>
+</nav>
+
+
+
+
+
+        <footer>
+    <div class="container">
+        <p>
+            <p>All content copyright 微阅读. All rights reserved.</p>
+            <p>Theme created by <a href="http://www.messier219.com" target="_blank">Messier219</a>.</p>
+        </p>
     </div>
+</footer>
 
-    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
-    <script>
-      (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
-      function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
-      e=o.createElement(i);r=o.getElementsByTagName(i)[0];
-      e.src='https://www.google-analytics.com/analytics.js';
-      r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
-      ga('create','UA-XXXXX-X');ga('send','pageview');
+
+
+        <script type="text/javascript">
+if (typeof jQuery == 'undefined') {
+    document.write('<script type="text/javascript" src="/static/libraries/jquery/jquery-1.11.3.min.js?v=895323ed2f7258af4fae2c738c8aea49"></'+'script>');
+}
     </script>
+    <script src="/static/libraries/bootstrap/js/bootstrap.min.js?v=d0de804423f358e130bca742f1fe8a83"></script>
+    <script src="/static/libraries/imagesloaded/imagesloaded.pkgd.min.js?v=5b0dccc792fde9c6ba5cbe1cd1a8ec2d"></script>
+    <script src="/static/libraries/masonry/masonry.pkgd.min.js?v=5420b6516c14245b504e7240a8310f2c"></script>
+    <script src="/static/libraries/prism/prism.js?v=49b05839a13fa76923c8a168c1af0b5a"></script>
+    <script src="/static/common/main.entry.js?v=d8c9a7640ef41ad6ee4c1fda6ed3959f"></script>
+    </body>
 
-    <!-- build:js scripts/vendor.js -->
-    <!-- bower:js -->
-    <script src="/bower_components/jquery/dist/jquery.js"></script>
-    <!-- endbower -->
-    <!-- endbuild -->
-
-    <!-- build:js scripts/plugins.js -->
-    <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/affix.js"></script>
-    <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/alert.js"></script>
-    <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/dropdown.js"></script>
-    <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/tooltip.js"></script>
-    <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/modal.js"></script>
-    <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/transition.js"></script>
-    <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/button.js"></script>
-    <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/popover.js"></script>
-    <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/carousel.js"></script>
-    <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/scrollspy.js"></script>
-    <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/collapse.js"></script>
-    <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/tab.js"></script>
-    <!-- endbuild -->
-
-    <!-- build:js scripts/main.js -->
-    <script src="scripts/main.js"></script>
-    <!-- endbuild -->
-  </body>
 </html>

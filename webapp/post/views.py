@@ -2,7 +2,7 @@
 # -*- coding:utf-8 -*-
 
 from flask import Blueprint, render_template, request, redirect, url_for
-from .models import Post
+from .models import WechatPost
 from webapp.extensions import redis_store as r
 
 
@@ -10,6 +10,16 @@ blueprint = Blueprint('post', __name__, url_prefix='/post',
                       static_folder='../static')
 
 
+@blueprint.route('/')
+@blueprint.route('/page/<int:page>')
+def post_list(page=1):
+    nick_name = request.args.get('nick_name')
+    # posts = WechatPost.objects.paginate(page=page, per_page=16)
+    posts = WechatPost.objects[:5]
+    # return ''.join([post.title for post in posts])
+    return render_template('index.html')
+
+"""
 @blueprint.route('/')
 def hello():
     return 'hello'
@@ -37,3 +47,4 @@ def add_post():
 def redis():
     r.incr('hits')
     return 'I have been seen %s times' % r.get('hits')
+"""

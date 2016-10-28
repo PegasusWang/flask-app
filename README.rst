@@ -2,7 +2,7 @@
 webapp-flask
 ===============================
 
-flask web app template.
+flask web app template.2016-09-24
 
 一个flask
 app项目框架，集成了gulp等工具。使用docker集成了redis，mongodb，mysql等数据库，可以快速建立一个flask

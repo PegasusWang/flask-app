@@ -11,6 +11,7 @@ from flask_sqlalchemy import SQLAlchemy
 from flask_wtf.csrf import CsrfProtect
 from flask_mongoengine import MongoEngine
 from flask_redis import FlaskRedis
+from redis import StrictRedis
 
 
 bcrypt = Bcrypt()
@@ -21,4 +22,4 @@ migrate = Migrate()
 cache = Cache()
 debug_toolbar = DebugToolbarExtension()
 mongodb = MongoEngine()
-redis_store = FlaskRedis()
+redis_store = FlaskRedis()    # default StrictRedisClient

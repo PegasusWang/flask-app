@@ -3,6 +3,7 @@
 """Management script."""
 
 import os
+import sys
 from glob import glob
 from subprocess import call
 
@@ -14,6 +15,11 @@ from webapp.app import create_app
 from webapp.database import db
 from webapp.settings import DevConfig, ProdConfig
 from webapp.user.models import User
+
+
+if int(sys.version[0]) == 2:
+    reload(sys)
+    sys.setdefaultencoding('utf-8')
 
 CONFIG = ProdConfig if os.environ.get('WEBAPP_ENV') == 'prod' else DevConfig
 HERE = os.path.abspath(os.path.dirname(__file__))
